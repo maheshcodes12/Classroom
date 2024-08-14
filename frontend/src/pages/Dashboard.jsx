@@ -6,15 +6,20 @@ import Classroom from "./Classroom";
 import { Box } from "@mui/material";
 import Teachers from "./Teachers";
 import Students from "./Students";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
 	const [selectedOption, setSelectedOption] = useState("Classrooms");
 	const [userType, setUserType] = useState("Principal");
+	const navigate = useNavigate();
+	const a = localStorage.getItem("email");
+	useEffect(() => {
+		if (!a) navigate("/login");
+	}, []);
 
-	// useEffect(() => {
-	// 	const typeofuser = localStorage.getItem("type");
-	// 	setUserType(typeofuser);
-	// }, []);
+	useEffect(() => {
+		if (selectedOption == "Register") navigate("/signup");
+	}, [selectedOption]);
 
 	return (
 		<Box
@@ -27,7 +32,7 @@ const Dashboard = () => {
 					userType={userType}
 					setSelectedOption={setSelectedOption}
 				/>
-				{selectedOption == "Profile" && (
+				{selectedOption == "Profile" && a && (
 					<Box>
 						<Profile />
 					</Box>

@@ -24,22 +24,33 @@ const NavBar = ({ userType, setSelectedOption }) => {
 				Profile
 			</Typography>
 			{userType === "Principal" && (
-				<Typography
-					variant='h6'
-					color='textPrimary'
-					sx={{ cursor: "pointer", "&:hover": { color: "#1976d2" } }}
-					onClick={() => setSelectedOption("Teachers")}>
-					Teachers
-				</Typography>
+				<>
+					<Typography
+						variant='h6'
+						color='textPrimary'
+						sx={{ cursor: "pointer", "&:hover": { color: "#1976d2" } }}
+						onClick={() => setSelectedOption("Teachers")}>
+						Teachers
+					</Typography>
+				</>
 			)}
 			{(userType === "Teacher" || userType === "Principal") && (
-				<Typography
-					variant='h6'
-					color='textPrimary'
-					sx={{ cursor: "pointer", "&:hover": { color: "#1976d2" } }}
-					onClick={() => setSelectedOption("Students")}>
-					Students
-				</Typography>
+				<>
+					<Typography
+						variant='h6'
+						color='textPrimary'
+						sx={{ cursor: "pointer", "&:hover": { color: "#1976d2" } }}
+						onClick={() => setSelectedOption("Students")}>
+						Students
+					</Typography>
+					<Typography
+						variant='h6'
+						color='textPrimary'
+						sx={{ cursor: "pointer", "&:hover": { color: "#1976d2" } }}
+						onClick={() => setSelectedOption("Register")}>
+						Register Students / Teacher
+					</Typography>
+				</>
 			)}
 			<Typography
 				variant='h6'
