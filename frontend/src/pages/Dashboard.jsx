@@ -12,13 +12,10 @@ const Dashboard = () => {
 	const [selectedOption, setSelectedOption] = useState("Classrooms");
 	const [userType, setUserType] = useState("Principal");
 	const navigate = useNavigate();
-	const a = localStorage.getItem("email");
-	useEffect(() => {
-		if (!a) navigate("/login");
-	}, []);
 
 	useEffect(() => {
 		if (selectedOption == "Register") navigate("/signup");
+		if (selectedOption == "Login") navigate("/login");
 	}, [selectedOption]);
 
 	return (

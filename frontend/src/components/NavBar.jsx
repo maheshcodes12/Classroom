@@ -59,6 +59,13 @@ const NavBar = ({ userType, setSelectedOption }) => {
 				onClick={() => setSelectedOption("Classrooms")}>
 				Classrooms
 			</Typography>
+			<Typography
+				variant='h6'
+				color='textPrimary'
+				sx={{ cursor: "pointer", "&:hover": { color: "#1976d2" } }}
+				onClick={() => setSelectedOption("Login")}>
+				Classrooms
+			</Typography>
 			{userType === "Principal" && (
 				<Button
 					variant='contained'
