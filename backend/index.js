@@ -13,7 +13,6 @@ app.use(
 	cors({
 		origin: "https://classroom-two-dun.vercel.app/", 
 		methods: ["GET", "POST", "PUT", "DELETE"],
-		allowedHeaders: ["Content-Type", "Authorization"],
 		credentials: true,
 	})
 );
